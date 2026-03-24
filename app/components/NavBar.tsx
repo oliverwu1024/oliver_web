@@ -1,9 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navLinks = [
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+];
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -20,37 +29,36 @@ export default function NavBar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a
-          href="#"
+        <Link
+          href="/"
           className="text-lg font-bold tracking-tight gradient-text"
         >
           oliver.
-        </a>
+        </Link>
         <div className="flex items-center gap-8">
-          <a
-            href="#about"
-            className="text-sm text-muted hover:text-foreground transition-colors"
-          >
-            About
-          </a>
-          <a
-            href="#stack"
-            className="text-sm text-muted hover:text-foreground transition-colors"
-          >
-            Stack
-          </a>
-          <a
-            href="#research"
-            className="text-sm text-muted hover:text-foreground transition-colors"
-          >
-            Research
-          </a>
-          <a
-            href="#contact"
-            className="text-sm px-4 py-1.5 rounded-full bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-all"
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`text-sm transition-colors ${
+                pathname === link.href
+                  ? "text-foreground font-medium"
+                  : "text-muted hover:text-foreground"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            className={`text-sm px-4 py-1.5 rounded-full border transition-all ${
+              pathname === "/contact"
+                ? "bg-accent/20 text-accent border-accent/30"
+                : "bg-accent/10 text-accent border-accent/20 hover:bg-accent/20"
+            }`}
           >
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
