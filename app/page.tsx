@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TimeSeriesBackground from "./components/TimeSeriesBackground";
 
 const highlights = [
   {
@@ -51,8 +52,9 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <TimeSeriesBackground />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-white/5 mb-8">
             <span className="w-2 h-2 rounded-full bg-green-500 status-dot" />
             <span className="text-sm text-muted">Available for collaboration</span>
