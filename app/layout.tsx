@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Oliver — Researcher & Engineer",
+  title: "Oliver Wu — Software Developer",
   description:
-    "Personal website of Oliver. Time series forecasting, probabilistic ML, and high-performance computing.",
+    "Personal website of Oliver Wu. Software development, data science, and machine learning.",
 };
 
 export default function RootLayout({
