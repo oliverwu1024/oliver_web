@@ -93,8 +93,8 @@ export default function HeroContent() {
   const [showPill, setShowPill] = useState(false);
 
   useEffect(() => {
-    const skip = document.documentElement.classList.contains("skip-intro");
-    if (skip) {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("submitted") === "true") {
       setSkipIntro(true);
       setShowPill(true);
       return;
