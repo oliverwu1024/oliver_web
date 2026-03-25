@@ -277,7 +277,7 @@ export default function Home() {
 
             {/* Right — contact form */}
             <form
-              action="https://formsubmit.co/oliverwu1024@gmail.com"
+              action="https://formsubmit.co/34ba25f62bf64969f03740223490c06c"
               method="POST"
               className="flex flex-col gap-6"
             >
