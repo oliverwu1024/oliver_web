@@ -81,27 +81,29 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center px-6 overflow-hidden">
-        <TimeSeriesBackground />
+        <div className="absolute inset-0 animate-fade-in animation-delay-1500 pointer-events-none">
+          <TimeSeriesBackground />
+        </div>
         <div className="relative z-10 w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-8 items-center py-20 lg:py-0">
           <div className="text-left max-w-2xl">
-            <div className="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-white/5 mb-8">
+            <div className="animate-drop-in animation-delay-2200 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-white/5 mb-8">
               <span className="w-2 h-2 rounded-full bg-green-500 status-dot" />
               <span className="text-sm text-muted">Available for collaboration</span>
             </div>
 
-            <h1 className="animate-fade-in-up animation-delay-100 text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-6">
+            <h1 className="animate-drop-in animation-delay-2400 text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-6">
               Hi, I&apos;m{" "}
               <span className="gradient-text">Oliver</span>
             </h1>
 
-            <p className="animate-fade-in-up animation-delay-200 text-lg sm:text-xl text-muted max-w-2xl mb-10 leading-relaxed">
+            <p className="animate-drop-in animation-delay-2600 text-lg sm:text-xl text-muted max-w-2xl mb-10 leading-relaxed">
               Researcher & engineer working at the intersection of{" "}
               <span className="text-foreground font-medium">time series forecasting</span>,{" "}
               <span className="text-foreground font-medium">probabilistic models</span>, and{" "}
               <span className="text-foreground font-medium">high-performance computing</span>.
             </p>
 
-            <div className="animate-fade-in-up animation-delay-300 flex flex-wrap items-center justify-start gap-4">
+            <div className="animate-drop-in animation-delay-2800 flex flex-wrap items-center justify-start gap-4">
               <Link
                 href="/projects"
                 className="group relative px-6 py-3 rounded-xl bg-accent text-white font-medium text-sm overflow-hidden transition-all hover:shadow-lg hover:shadow-accent/25"
@@ -122,7 +124,7 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="animate-fade-in animation-delay-800 absolute bottom-12 left-6 sm:left-10 lg:left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]">
+        <div className="animate-fade-in animation-delay-3200 absolute bottom-12 left-6 sm:left-10 lg:left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]">
           <div className="w-5 h-8 rounded-full border-2 border-white/20 flex items-start justify-center p-1">
             <div className="w-1 h-2 rounded-full bg-white/40 animate-bounce" />
           </div>
@@ -130,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* Highlights grid */}
-      <section className="relative py-24 px-6">
+      <section className="relative py-24 px-6 animate-fade-in animation-delay-3500">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
