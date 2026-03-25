@@ -171,3 +171,62 @@ body {
 .status-dot {
   animation: status-pulse 2s ease-in-out infinite;
 }
+
+/* Hero: plane flies in and lands on the right (transforms are from landing spot) */
+@keyframes plane-fly-land {
+  0% {
+    opacity: 0;
+    transform: translate(-75vw, -32vh) rotate(-32deg) scale(0.55);
+  }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    transform: translate(-28vw, -14vh) rotate(-12deg) scale(1);
+  }
+  70% {
+    transform: translate(-12vw, 2vh) rotate(-3deg) scale(1);
+  }
+  88% {
+    transform: translate(0, 18px) rotate(14deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 12px) rotate(9deg) scale(1);
+  }
+}
+
+@keyframes welcome-aboard-reveal {
+  0%,
+  72% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plane-fly-land {
+  animation: plane-fly-land 3.2s cubic-bezier(0.33, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+.welcome-aboard-reveal {
+  animation: welcome-aboard-reveal 3.4s ease-out forwards;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plane-fly-land {
+    animation: none;
+    opacity: 1;
+    transform: translate(0, 12px) rotate(9deg) scale(1);
+  }
+  .welcome-aboard-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

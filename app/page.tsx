@@ -48,51 +48,83 @@ const highlights = [
   },
 ];
 
+function PlaneWelcome() {
+  return (
+    <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto min-h-[200px] sm:min-h-[240px] flex flex-col items-center lg:items-end justify-center">
+      <div className="relative w-full h-36 sm:h-44 flex items-end justify-center lg:justify-end overflow-visible">
+        <div className="plane-fly-land absolute bottom-8 sm:bottom-10 right-[12%] sm:right-[18%] lg:right-[8%] origin-center will-change-transform">
+          <svg
+            className="w-20 h-20 sm:w-28 sm:h-28 text-accent drop-shadow-[0_0_24px_rgba(99,102,241,0.35)]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.25}
+            aria-hidden
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 12 3.269 3.126A59.769 59.769 0 0 1 21.485 12 59.77 59.77 0 0 1 3.27 20.874L5.999 12Zm0 0h7.5"
+            />
+          </svg>
+        </div>
+      </div>
+      <p className="welcome-aboard-reveal mt-4 text-right w-full font-mono text-sm sm:text-base tracking-wide text-accent uppercase">
+        Welcome aboard
+      </p>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+      <section className="relative min-h-screen flex items-center px-6 overflow-hidden">
         <TimeSeriesBackground />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-white/5 mb-8">
-            <span className="w-2 h-2 rounded-full bg-green-500 status-dot" />
-            <span className="text-sm text-muted">Available for collaboration</span>
-          </div>
-
-          <h1 className="animate-fade-in-up animation-delay-100 text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-6">
-            Hi, I&apos;m{" "}
-            <span className="gradient-text">Oliver</span>
-          </h1>
-
-          <p className="animate-fade-in-up animation-delay-200 text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
-            Researcher & engineer working at the intersection of{" "}
-            <span className="text-foreground font-medium">time series forecasting</span>,{" "}
-            <span className="text-foreground font-medium">probabilistic models</span>, and{" "}
-            <span className="text-foreground font-medium">high-performance computing</span>.
-          </p>
-
-          <div className="animate-fade-in-up animation-delay-300 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/projects"
-              className="group relative px-6 py-3 rounded-xl bg-accent text-white font-medium text-sm overflow-hidden transition-all hover:shadow-lg hover:shadow-accent/25"
-            >
-              <span className="relative z-10">View Projects</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Link>
-            <Link
-              href="/about"
-              className="px-6 py-3 rounded-xl border border-white/10 text-sm font-medium text-muted hover:text-foreground hover:border-white/20 transition-all"
-            >
-              About Me
-            </Link>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="animate-fade-in animation-delay-800 absolute bottom-12 left-1/2 -translate-x-1/2">
-            <div className="w-5 h-8 rounded-full border-2 border-white/20 flex items-start justify-center p-1">
-              <div className="w-1 h-2 rounded-full bg-white/40 animate-bounce" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-8 items-center py-20 lg:py-0">
+          <div className="text-left max-w-2xl">
+            <div className="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-white/5 mb-8">
+              <span className="w-2 h-2 rounded-full bg-green-500 status-dot" />
+              <span className="text-sm text-muted">Available for collaboration</span>
             </div>
+
+            <h1 className="animate-fade-in-up animation-delay-100 text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-6">
+              Hi, I&apos;m{" "}
+              <span className="gradient-text">Oliver</span>
+            </h1>
+
+            <p className="animate-fade-in-up animation-delay-200 text-lg sm:text-xl text-muted max-w-2xl mb-10 leading-relaxed">
+              Researcher & engineer working at the intersection of{" "}
+              <span className="text-foreground font-medium">time series forecasting</span>,{" "}
+              <span className="text-foreground font-medium">probabilistic models</span>, and{" "}
+              <span className="text-foreground font-medium">high-performance computing</span>.
+            </p>
+
+            <div className="animate-fade-in-up animation-delay-300 flex flex-wrap items-center justify-start gap-4">
+              <Link
+                href="/projects"
+                className="group relative px-6 py-3 rounded-xl bg-accent text-white font-medium text-sm overflow-hidden transition-all hover:shadow-lg hover:shadow-accent/25"
+              >
+                <span className="relative z-10">View Projects</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
+              <Link
+                href="/about"
+                className="px-6 py-3 rounded-xl border border-white/10 text-sm font-medium text-muted hover:text-foreground hover:border-white/20 transition-all"
+              >
+                About Me
+              </Link>
+            </div>
+          </div>
+
+          <PlaneWelcome />
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="animate-fade-in animation-delay-800 absolute bottom-12 left-6 sm:left-10 lg:left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]">
+          <div className="w-5 h-8 rounded-full border-2 border-white/20 flex items-start justify-center p-1">
+            <div className="w-1 h-2 rounded-full bg-white/40 animate-bounce" />
           </div>
         </div>
       </section>
