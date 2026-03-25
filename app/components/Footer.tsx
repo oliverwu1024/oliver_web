@@ -7,7 +7,7 @@ export default function Footer() {
         </span>
         <div className="flex items-center gap-6">
           <a
-            href="https://github.com/oliver1024"
+            href="https://github.com/oliverwu1024"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-muted hover:text-foreground transition-colors"
@@ -15,7 +15,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/oliver-wu-aa40a7215"
             className="text-sm text-muted hover:text-foreground transition-colors"
           >
             LinkedIn

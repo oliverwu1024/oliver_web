@@ -24,7 +24,7 @@ export default function ContactSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent-2 opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
           <a
-            href="https://github.com/oliver1024"
+            href="https://github.com/oliverwu1024"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 rounded-xl border border-white/10 text-sm font-medium text-muted hover:text-foreground hover:border-white/20 transition-all"

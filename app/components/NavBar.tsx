@@ -2,17 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const navLinks = [
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
-];
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -33,32 +25,25 @@ export default function NavBar() {
           href="/"
           className="text-lg font-bold tracking-tight gradient-text"
         >
-          oliver.
+          Home
         </Link>
         <div className="flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm transition-colors ${
-                pathname === link.href
-                  ? "text-foreground font-medium"
-                  : "text-muted hover:text-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/contact"
-            className={`text-sm px-4 py-1.5 rounded-full border transition-all ${
-              pathname === "/contact"
-                ? "bg-accent/20 text-accent border-accent/30"
-                : "bg-accent/10 text-accent border-accent/20 hover:bg-accent/20"
-            }`}
+          <a
+            href="https://github.com/oliverwu1024"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold tracking-widest uppercase gradient-text hover:opacity-80 transition-opacity"
           >
-            Contact
-          </Link>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/oliver-wu-aa40a7215"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold tracking-widest uppercase gradient-text hover:opacity-80 transition-opacity"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </nav>
