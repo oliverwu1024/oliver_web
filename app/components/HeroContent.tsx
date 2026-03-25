@@ -11,28 +11,31 @@ function TypewriterText({
   segments,
   startDelay,
   speed,
+  skip = false,
   className,
 }: {
   segments: Segment[];
   startDelay: number;
   speed: number;
+  skip?: boolean;
   className?: string;
 }) {
   const totalLen = segments.reduce((s, seg) => s + seg.text.length, 0);
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
+  const [count, setCount] = useState(skip ? totalLen : 0);
+  const [started, setStarted] = useState(skip);
   const done = count >= totalLen;
 
   useEffect(() => {
+    if (skip) return;
     const id = setTimeout(() => setStarted(true), startDelay);
     return () => clearTimeout(id);
-  }, [startDelay]);
+  }, [startDelay, skip]);
 
   useEffect(() => {
-    if (!started || done) return;
+    if (skip || !started || done) return;
     const id = setTimeout(() => setCount((c) => c + 1), speed);
     return () => clearTimeout(id);
-  }, [started, count, done, speed]);
+  }, [started, count, done, speed, skip]);
 
   let remaining = count;
   const rendered = segments.map((seg, i) => {
@@ -86,9 +89,16 @@ const pillDelay = PLANE_LAND + 200;
 const headingDelay = PLANE_LAND + 400;
 const descDelay = headingDelay + headingDuration + 200;
 export default function HeroContent() {
+  const [skipIntro, setSkipIntro] = useState(false);
   const [showPill, setShowPill] = useState(false);
 
   useEffect(() => {
+    const skip = document.documentElement.classList.contains("skip-intro");
+    if (skip) {
+      setSkipIntro(true);
+      setShowPill(true);
+      return;
+    }
     const t1 = setTimeout(() => setShowPill(true), pillDelay);
     return () => clearTimeout(t1);
   }, []);
@@ -111,6 +121,7 @@ export default function HeroContent() {
           segments={headingSegments}
           startDelay={headingDelay}
           speed={headingSpeed}
+          skip={skipIntro}
         />
       </h1>
 
@@ -120,6 +131,7 @@ export default function HeroContent() {
           segments={descSegments}
           startDelay={descDelay}
           speed={descSpeed}
+          skip={skipIntro}
         />
       </p>
 

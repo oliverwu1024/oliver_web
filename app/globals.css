@@ -289,3 +289,29 @@ body {
     transform: none;
   }
 }
+
+/* Skip all intro animations when redirected back from form */
+.skip-intro .plane-fly-land {
+  animation: none;
+  opacity: 1;
+  transform: translate(0, 0) rotate(2deg);
+}
+.skip-intro .welcome-aboard-reveal {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+.skip-intro .animate-fade-in {
+  animation: none;
+  opacity: 1;
+}
+.skip-intro .animate-fade-in-up {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+.skip-intro .animate-drop-in {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}

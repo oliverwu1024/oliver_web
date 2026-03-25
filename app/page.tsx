@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import TimeSeriesBackground from "./components/TimeSeriesBackground";
 import HeroContent from "./components/HeroContent";
+import NavList from "./components/NavList";
+import FormNextInput from "./components/FormNextInput";
 
 function PlaneWelcome() {
   return (
@@ -130,26 +132,7 @@ function PlaneWelcome() {
         <p className="font-mono text-2xl sm:text-3xl tracking-wide text-accent uppercase font-bold text-right">
           Welcome aboard
         </p>
-        <div className="flex flex-col items-start gap-3 mt-6">
-          <a href="#about" className="text-lg sm:text-xl text-muted hover:text-foreground transition-colors">
-            <span className="text-accent/50 font-mono text-sm mr-2">1.</span>About
-          </a>
-          <a href="#projects" className="text-lg sm:text-xl text-muted hover:text-foreground transition-colors">
-            <span className="text-accent/50 font-mono text-sm mr-2">2.</span>Projects
-          </a>
-          <a href="#skills" className="text-lg sm:text-xl text-muted hover:text-foreground transition-colors">
-            <span className="text-accent/50 font-mono text-sm mr-2">3.</span>Skills
-          </a>
-          <a href="#resume" className="text-lg sm:text-xl text-muted hover:text-foreground transition-colors">
-            <span className="text-accent/50 font-mono text-sm mr-2">4.</span>Resume
-          </a>
-          <a href="#contact" className="text-lg sm:text-xl text-muted hover:text-foreground transition-colors">
-            <span className="text-accent/50 font-mono text-sm mr-2">5.</span>Contact
-          </a>
-          <a href="#blog" className="text-lg sm:text-xl text-muted hover:text-foreground transition-colors">
-            <span className="text-accent/50 font-mono text-sm mr-2">6.</span>Blog
-          </a>
-        </div>
+        <NavList />
         <div className="flex items-center gap-3 mt-8">
           <div className="w-5 h-8 rounded-full border-2 border-white/20 flex items-start justify-center p-1">
             <div className="w-1 h-2 rounded-full bg-white/40 animate-bounce" />
@@ -284,6 +267,7 @@ export default function Home() {
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New message from your website!" />
               <input type="hidden" name="_template" value="table" />
+              <FormNextInput />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-muted mb-2">Name</label>
                 <input
