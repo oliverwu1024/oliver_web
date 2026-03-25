@@ -3,7 +3,7 @@ import Image from "next/image";
 import TimeSeriesBackground from "./components/TimeSeriesBackground";
 import HeroContent from "./components/HeroContent";
 import NavList from "./components/NavList";
-import FormNextInput from "./components/FormNextInput";
+import ContactForm from "./components/ContactForm";
 
 function PlaneWelcome() {
   return (
@@ -259,56 +259,7 @@ export default function Home() {
             </div>
 
             {/* Right — contact form */}
-            <form
-              action="https://formsubmit.co/34ba25f62bf64969f03740223490c06c"
-              method="POST"
-              className="flex flex-col gap-6"
-            >
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="New message from your website!" />
-              <input type="hidden" name="_template" value="table" />
-              <FormNextInput />
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-muted mb-2">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Enter your name"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-muted mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="example@email.com"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-muted mb-2">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  placeholder="Write your message..."
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="group relative px-8 py-3 rounded-xl bg-accent text-white font-medium text-sm overflow-hidden transition-all hover:shadow-lg hover:shadow-accent/25 self-start"
-              >
-                <span className="relative z-10">Send Message</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
