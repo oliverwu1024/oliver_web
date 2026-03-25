@@ -89,16 +89,9 @@ const pillDelay = PLANE_LAND + 200;
 const headingDelay = PLANE_LAND + 400;
 const descDelay = headingDelay + headingDuration + 200;
 export default function HeroContent() {
-  const [skipIntro, setSkipIntro] = useState(false);
   const [showPill, setShowPill] = useState(false);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("submitted") === "true") {
-      setSkipIntro(true);
-      setShowPill(true);
-      return;
-    }
     const t1 = setTimeout(() => setShowPill(true), pillDelay);
     return () => clearTimeout(t1);
   }, []);
@@ -121,7 +114,7 @@ export default function HeroContent() {
           segments={headingSegments}
           startDelay={headingDelay}
           speed={headingSpeed}
-          skip={skipIntro}
+          skip={false}
         />
       </h1>
 
@@ -131,7 +124,7 @@ export default function HeroContent() {
           segments={descSegments}
           startDelay={descDelay}
           speed={descSpeed}
-          skip={skipIntro}
+          skip={false}
         />
       </p>
 

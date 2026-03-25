@@ -4,7 +4,6 @@ import "./globals.css";
 import NavBar from "./components/NavBar";
 import GlowOrbs from "./components/GlowOrbs";
 import Footer from "./components/Footer";
-import SkipIntro from "./components/SkipIntro";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +32,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col noise-overlay grid-pattern">
-        <SkipIntro />
         <GlowOrbs />
         <NavBar />
         <main className="flex-1">{children}</main>

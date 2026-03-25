@@ -1,19 +1,36 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import FormNextInput from "./FormNextInput";
+import { useState } from "react";
 
 export default function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("submitted") === "true") {
-      setSent(true);
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/34ba25f62bf64969f03740223490c06c", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
     }
-  }, []);
+  }
 
-  if (sent) {
+  if (status === "sent") {
     return (
       <div className="flex flex-col items-center justify-center gap-6 py-12">
         <div className="w-16 h-16 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center">
@@ -26,7 +43,7 @@ export default function ContactForm() {
           Thanks for reaching out. I&apos;ll get back to you soon.
         </p>
         <button
-          onClick={() => setSent(false)}
+          onClick={() => setStatus("idle")}
           className="group relative px-8 py-3 rounded-xl bg-accent text-white font-medium text-sm overflow-hidden transition-all hover:shadow-lg hover:shadow-accent/25"
         >
           <span className="relative z-10">Send another message</span>
@@ -37,15 +54,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form
-      action="https://formsubmit.co/34ba25f62bf64969f03740223490c06c"
-      method="POST"
-      className="flex flex-col gap-6"
-    >
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_subject" value="New message from your website!" />
-      <input type="hidden" name="_template" value="table" />
-      <FormNextInput />
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-muted mb-2">Name</label>
         <input
@@ -81,11 +90,17 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="group relative px-8 py-3 rounded-xl bg-accent text-white font-medium text-sm overflow-hidden transition-all hover:shadow-lg hover:shadow-accent/25 self-start"
+        disabled={status === "sending"}
+        className="group relative px-8 py-3 rounded-xl bg-accent text-white font-medium text-sm overflow-hidden transition-all hover:shadow-lg hover:shadow-accent/25 self-start disabled:opacity-50"
       >
-        <span className="relative z-10">Send Message</span>
+        <span className="relative z-10">
+          {status === "sending" ? "Sending..." : "Send Message"}
+        </span>
         <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent-2 opacity-0 group-hover:opacity-100 transition-opacity" />
       </button>
+      {status === "error" && (
+        <p className="text-sm text-red-400">Something went wrong. Please try again.</p>
+      )}
     </form>
   );
 }
