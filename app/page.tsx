@@ -5,6 +5,7 @@ import HeroContent from "./components/HeroContent";
 import NavList from "./components/NavList";
 import ContactForm from "./components/ContactForm";
 import Particles from "./components/Particles";
+import SalutingRobot from "./components/SalutingRobot";
 
 function PlaneWelcome() {
   return (
@@ -165,12 +166,53 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">01</span>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-8">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 flex items-center gap-4">
             About <span className="gradient-text">Me</span>
+            <SalutingRobot />
           </h2>
-          <p className="text-lg text-muted max-w-2xl leading-relaxed">
-            Coming soon.
-          </p>
+
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-10">
+            {/* Left — description */}
+            <div>
+              <p className="text-lg sm:text-xl text-muted leading-relaxed mb-6">
+                I build across the entire spectrum — from <span className="text-foreground font-medium">pixel-perfect interfaces</span> to <span className="text-foreground font-medium">scalable backend systems</span> to <span className="text-foreground font-medium">data pipelines</span> that power real decisions. I enjoy owning problems end to end and shipping things that people actually use.
+              </p>
+              <p className="text-lg sm:text-xl text-muted leading-relaxed mb-6">
+                What sets me apart is that I don&apos;t just write code — I think about <span className="text-foreground font-medium">architecture</span>, <span className="text-foreground font-medium">user experience</span>, and <span className="text-foreground font-medium">business impact</span>. Whether it&apos;s training a model or designing an API, I care about doing it right.
+              </p>
+              <p className="text-lg sm:text-xl text-muted leading-relaxed">
+                Outside of work, you&apos;ll find me at the gym, gaming, or going down rabbit holes on emerging tech. Always learning, always building.
+              </p>
+            </div>
+
+            {/* Right — video */}
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-xl shadow-accent/10 h-[350px] sm:h-[420px] max-w-md ml-auto">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/about-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Marquee at bottom of About */}
+        <div className="absolute bottom-0 left-0 right-0 overflow-hidden py-4">
+          <div className="marquee-track whitespace-nowrap">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <span
+                key={i}
+                className="text-6xl sm:text-8xl font-bold uppercase tracking-wider text-white/[0.04] mx-8 inline-block select-none"
+              >
+                Oliver Wu
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 

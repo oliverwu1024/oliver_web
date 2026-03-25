@@ -238,6 +238,50 @@ body {
   animation: particle-float-2 13s linear 7s infinite;
 }
 
+/* Robot salute animation */
+@keyframes robot-salute {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-5deg); }
+  30%, 70% { transform: rotate(-45deg); }
+  85% { transform: rotate(-5deg); }
+}
+
+@keyframes robot-body-sway {
+  0%, 100% { transform: translateY(0); }
+  30%, 70% { transform: translateY(-2px); }
+}
+
+@keyframes robot-eye-glow {
+  0%, 100% { opacity: 0.8; }
+  30%, 70% { opacity: 1; r: 5; }
+}
+
+.robot-salute-arm {
+  transform-origin: 36px 62px;
+  animation: robot-salute 3s ease-in-out infinite;
+}
+
+.robot-body-sway {
+  animation: robot-body-sway 3s ease-in-out infinite;
+}
+
+.robot-eye-pulse {
+  animation: robot-eye-glow 3s ease-in-out infinite;
+}
+
+/* Marquee scroll */
+@keyframes marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee-scroll 90s linear infinite;
+}
+
 /* Grid pattern */
 .grid-pattern {
   background-image:
