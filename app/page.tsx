@@ -159,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* 1. About */}
-      <section id="about" className="relative min-h-screen flex items-center px-6 bg-surface">
+      <section id="about" className="relative min-h-screen flex items-center px-6 bg-surface section-particles">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">01</span>
@@ -173,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* 2. Projects */}
-      <section id="projects" className="relative min-h-screen flex items-center px-6 bg-background">
+      <section id="projects" className="relative min-h-screen flex items-center px-6 bg-background section-particles">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">02</span>
@@ -187,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* 3. Skills */}
-      <section id="skills" className="relative min-h-screen flex items-center px-6 bg-surface">
+      <section id="skills" className="relative min-h-screen flex items-center px-6 bg-surface section-particles">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">03</span>
@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* 4. Resume */}
-      <section id="resume" className="relative min-h-screen flex items-center px-6 bg-background">
+      <section id="resume" className="relative min-h-screen flex items-center px-6 bg-background section-particles">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">04</span>
@@ -215,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* 5. Contact */}
-      <section id="contact" className="relative min-h-screen flex items-center px-6 bg-surface">
+      <section id="contact" className="relative min-h-screen flex items-center px-6 bg-surface section-particles">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block text-center">05</span>
@@ -231,6 +231,7 @@ export default function Home() {
                   src="/oliver-photo.jpg"
                   alt="Oliver Wu"
                   fill
+                  sizes="(max-width: 640px) 256px, 288px"
                   className="object-cover"
                 />
               </div>
@@ -265,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* 6. Blog */}
-      <section id="blog" className="relative min-h-screen flex items-center px-6 bg-background">
+      <section id="blog" className="relative min-h-screen flex items-center px-6 bg-background section-particles">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">06</span>

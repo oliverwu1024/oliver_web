@@ -163,6 +163,57 @@ body {
   z-index: 50;
 }
 
+/* Subtle floating particles for section backgrounds */
+@keyframes float-up {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+@keyframes float-up-drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(-15px); opacity: 0; }
+}
+
+.section-particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-particles::before,
+.section-particles::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.section-particles::before {
+  background-image:
+    radial-gradient(1px 1px at 10% 90%, rgba(99,102,241,0.25) 50%, transparent 50%),
+    radial-gradient(1px 1px at 25% 70%, rgba(139,92,246,0.2) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 45% 85%, rgba(99,102,241,0.18) 50%, transparent 50%),
+    radial-gradient(1px 1px at 65% 95%, rgba(167,139,250,0.22) 50%, transparent 50%),
+    radial-gradient(1px 1px at 80% 75%, rgba(99,102,241,0.2) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 92% 88%, rgba(139,92,246,0.15) 50%, transparent 50%);
+  background-size: 100% 100%;
+  animation: float-up 12s linear infinite;
+}
+
+.section-particles::after {
+  background-image:
+    radial-gradient(1px 1px at 15% 80%, rgba(139,92,246,0.2) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 35% 92%, rgba(99,102,241,0.18) 50%, transparent 50%),
+    radial-gradient(1px 1px at 55% 76%, rgba(167,139,250,0.22) 50%, transparent 50%),
+    radial-gradient(1px 1px at 72% 88%, rgba(99,102,241,0.15) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 88% 82%, rgba(139,92,246,0.2) 50%, transparent 50%);
+  background-size: 100% 100%;
+  animation: float-up-drift 16s linear 4s infinite;
+}
+
 /* Grid pattern */
 .grid-pattern {
   background-image:
