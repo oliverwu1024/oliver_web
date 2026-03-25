@@ -4,6 +4,7 @@ import TimeSeriesBackground from "./components/TimeSeriesBackground";
 import HeroContent from "./components/HeroContent";
 import NavList from "./components/NavList";
 import ContactForm from "./components/ContactForm";
+import Particles from "./components/Particles";
 
 function PlaneWelcome() {
   return (
@@ -160,6 +161,7 @@ export default function Home() {
 
       {/* 1. About */}
       <section id="about" className="relative min-h-screen flex items-center px-6 bg-surface section-particles">
+        <Particles />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">01</span>
@@ -174,6 +176,7 @@ export default function Home() {
 
       {/* 2. Projects */}
       <section id="projects" className="relative min-h-screen flex items-center px-6 bg-background section-particles">
+        <Particles />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">02</span>
@@ -188,6 +191,7 @@ export default function Home() {
 
       {/* 3. Skills */}
       <section id="skills" className="relative min-h-screen flex items-center px-6 bg-surface section-particles">
+        <Particles />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">03</span>
@@ -202,6 +206,7 @@ export default function Home() {
 
       {/* 4. Resume */}
       <section id="resume" className="relative min-h-screen flex items-center px-6 bg-background section-particles">
+        <Particles />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">04</span>
@@ -216,6 +221,7 @@ export default function Home() {
 
       {/* 5. Contact */}
       <section id="contact" className="relative min-h-screen flex items-center px-6 bg-surface section-particles">
+        <Particles />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block text-center">05</span>
@@ -267,6 +273,7 @@ export default function Home() {
 
       {/* 6. Blog */}
       <section id="blog" className="relative min-h-screen flex items-center px-6 bg-background section-particles">
+        <Particles />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">06</span>
