@@ -13,10 +13,10 @@ function PlaneWelcome() {
             fill="none"
             aria-hidden
           >
-            {/* ── Exhaust flames ── */}
-            <path d="M75 195 C55 188 30 192 10 185" stroke="rgba(251,146,60,0.45)" strokeWidth="4" strokeLinecap="round" fill="none" />
-            <path d="M75 205 C50 210 25 204 5 210" stroke="rgba(251,146,60,0.3)" strokeWidth="3" strokeLinecap="round" fill="none" />
-            <path d="M75 215 C58 222 38 216 22 224" stroke="rgba(239,68,68,0.25)" strokeWidth="3" strokeLinecap="round" fill="none" />
+            {/* ── Exhaust flames (animated) ── */}
+            <path className="flame-flicker" d="M75 195 C55 188 30 192 10 185" stroke="rgba(251,146,60,0.45)" strokeWidth="4" strokeLinecap="round" fill="none" />
+            <path className="flame-flicker-2" d="M75 205 C50 210 25 204 5 210" stroke="rgba(251,146,60,0.3)" strokeWidth="3" strokeLinecap="round" fill="none" />
+            <path className="flame-flicker-3" d="M75 215 C58 222 38 216 22 224" stroke="rgba(239,68,68,0.25)" strokeWidth="3" strokeLinecap="round" fill="none" />
 
             {/* ── Tail vertical fin ── */}
             <path d="M95 140 L65 78 L115 78 L120 130" fill="#1a1a2e" stroke="rgba(99,102,241,0.45)" strokeWidth="2" strokeLinejoin="round" />
@@ -105,18 +105,20 @@ function PlaneWelcome() {
             {/* Open palm fingers */}
             <path d="M361 78 L362 72 M365 77 L367 71 M369 79 L372 74" stroke="rgba(167,139,250,0.3)" strokeWidth="1.5" strokeLinecap="round" />
 
-            {/* Red scarf flowing in wind */}
-            <path d="M286 126 C274 140 266 132 254 146 C244 158 234 148 222 160" stroke="rgba(239,68,68,0.4)" strokeWidth="5" fill="none" strokeLinecap="round" />
-            <path d="M286 132 C276 144 270 136 262 148" stroke="rgba(239,68,68,0.3)" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+            {/* Red scarf flowing in wind (animated) */}
+            <path className="scarf-wave" d="M286 126 C274 140 266 132 254 146 C244 158 234 148 222 160" stroke="rgba(239,68,68,0.4)" strokeWidth="5" fill="none" strokeLinecap="round" />
+            <path className="scarf-wave-2" d="M286 132 C276 144 270 136 262 148" stroke="rgba(239,68,68,0.3)" strokeWidth="3.5" fill="none" strokeLinecap="round" />
 
             {/* ── Engine cowling ── */}
             <path d="M378 152 L404 160 L408 178 L408 222 L404 240 L378 248" fill="#0c0c18" stroke="rgba(99,102,241,0.45)" strokeWidth="2" strokeLinejoin="round" />
             {/* Engine grille */}
             <path d="M384 174 L400 177 M384 200 L400 200 M384 226 L400 223" stroke="rgba(99,102,241,0.2)" strokeWidth="1.5" strokeLinecap="round" />
 
-            {/* ── Propeller (motion blur disc) ── */}
-            <ellipse cx="412" cy="200" rx="6" ry="58" fill="rgba(167,139,250,0.18)" />
-            <ellipse cx="412" cy="200" rx="4" ry="48" fill="rgba(167,139,250,0.1)" />
+            {/* ── Propeller (spinning) ── */}
+            <g className="prop-spin">
+              <ellipse cx="412" cy="200" rx="6" ry="58" fill="rgba(167,139,250,0.18)" />
+              <ellipse cx="412" cy="200" rx="4" ry="48" fill="rgba(167,139,250,0.1)" />
+            </g>
             {/* Hub */}
             <circle cx="412" cy="200" r="10" fill="rgba(99,102,241,0.5)" stroke="rgba(99,102,241,0.35)" strokeWidth="2" />
             <circle cx="412" cy="200" r="3.5" fill="rgba(167,139,250,0.4)" />

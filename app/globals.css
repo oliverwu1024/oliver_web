@@ -196,6 +196,40 @@ body {
   animation: status-pulse 2s ease-in-out infinite;
 }
 
+/* Exhaust flame flicker */
+@keyframes flame-flicker {
+  0%, 100% { opacity: 0.45; transform: translateX(0); }
+  25% { opacity: 0.25; transform: translateX(-3px); }
+  50% { opacity: 0.5; transform: translateX(-1px); }
+  75% { opacity: 0.3; transform: translateX(-4px); }
+}
+
+/* Scarf wave */
+@keyframes scarf-wave {
+  0%, 100% { d: path("M286 126 C274 140 266 132 254 146 C244 158 234 148 222 160"); }
+  33% { d: path("M286 126 C276 142 264 130 252 148 C242 160 230 150 218 158"); }
+  66% { d: path("M286 126 C272 138 268 134 256 144 C246 156 238 146 226 162"); }
+}
+
+@keyframes scarf-wave-2 {
+  0%, 100% { d: path("M286 132 C276 144 270 136 262 148"); }
+  33% { d: path("M286 132 C278 146 268 134 258 150"); }
+  66% { d: path("M286 132 C274 142 272 138 264 146"); }
+}
+
+/* Propeller spin */
+@keyframes prop-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.flame-flicker { animation: flame-flicker 0.4s ease-in-out infinite; }
+.flame-flicker-2 { animation: flame-flicker 0.5s ease-in-out 0.1s infinite; }
+.flame-flicker-3 { animation: flame-flicker 0.35s ease-in-out 0.2s infinite; }
+.scarf-wave { animation: scarf-wave 1.5s ease-in-out infinite; }
+.scarf-wave-2 { animation: scarf-wave-2 1.5s ease-in-out 0.2s infinite; }
+.prop-spin { animation: prop-spin 0.15s linear infinite; transform-origin: 412px 200px; }
+
 /* Cursor blink for typewriter */
 @keyframes cursor-blink {
   0%, 49% { opacity: 1; }
