@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Oliver",
+  title: "Contact",
   description:
     "Get in touch for collaboration, research opportunities, or interesting problems.",
+  alternates: { canonical: "/contact" },
 };
 
 const links = [

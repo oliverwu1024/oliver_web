@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog — Oliver",
+  title: "Blog",
   description:
     "Thoughts on ML research, engineering workflows, and lessons learned.",
+  alternates: { canonical: "/blog" },
 };
 
 const posts = [

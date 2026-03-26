@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Oliver",
+  title: "About",
   description:
     "Researcher & engineer specializing in time series forecasting, probabilistic ML, and high-performance computing.",
+  alternates: { canonical: "/about" },
 };
 
 const stats = [

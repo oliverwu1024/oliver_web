@@ -15,10 +15,36 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://oliverweb-delta.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Oliver Wu — Software Developer",
+  title: {
+    default: "Oliver Wu — Software Developer",
+    template: "%s — Oliver Wu",
+  },
   description:
     "Personal website of Oliver Wu. Software development, data science, and machine learning.",
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    url: siteUrl,
+    siteName: "Oliver Wu",
+    title: "Oliver Wu — Software Developer",
+    description:
+      "Software developer specializing in full-stack applications, data science, and machine learning.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Oliver Wu — Software Developer",
+    description:
+      "Software developer specializing in full-stack applications, data science, and machine learning.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

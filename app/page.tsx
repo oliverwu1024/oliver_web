@@ -197,6 +197,7 @@ export default function Home() {
                 loop
                 muted
                 playsInline
+                aria-label="About Oliver Wu — introductory video"
                 className="w-full h-full object-cover"
               >
                 <source src="/about-video.mp4" type="video/mp4" />
