@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+export {};
 
 /* ── Data ── */
 
@@ -97,8 +95,8 @@ const volunteer = [
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-      <span className="w-2 h-2 rounded-full bg-accent inline-block" />
+    <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+      <span className="w-2.5 h-2.5 rounded-full bg-accent inline-block" />
       {children}
     </h3>
   );
@@ -110,52 +108,39 @@ function TimelineEntry({
   period,
   badge,
   points,
-  defaultOpen = false,
 }: {
   title: string;
   subtitle: string;
   period: string;
   badge?: string;
   points?: string[];
-  defaultOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(defaultOpen);
-  const hasPoints = points && points.length > 0;
-
   return (
-    <div className="relative pl-6 pb-6 border-l border-white/10 last:pb-0">
-      <div className="absolute left-0 top-1 w-2.5 h-2.5 rounded-full bg-surface-2 border-2 border-accent/60 -translate-x-[5.5px]" />
+    <div className="relative pl-8 pb-8 border-l border-white/10 last:pb-0">
+      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-surface-2 border-2 border-accent/60 -translate-x-[7px]" />
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
-        <button
-          onClick={() => hasPoints && setOpen(!open)}
-          className={`text-sm font-semibold text-foreground text-left ${hasPoints ? "hover:text-accent transition-colors cursor-pointer" : ""}`}
-        >
+        <span className="text-base font-semibold text-foreground">
           {title}
-        </button>
-        <span className="text-xs font-mono text-muted">{period}</span>
+        </span>
+        <span className="text-sm font-mono text-muted">{period}</span>
       </div>
-      <div className="flex items-center gap-2 mb-1">
-        <span className="text-xs text-muted">{subtitle}</span>
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-sm text-muted">{subtitle}</span>
         {badge && (
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/20">
+          <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/20">
             {badge}
           </span>
         )}
       </div>
-      {hasPoints && (
-        <div
-          className="overflow-hidden transition-all duration-400 ease-in-out"
-          style={{ maxHeight: open ? "300px" : "0px", opacity: open ? 1 : 0 }}
-        >
-          <ul className="mt-2 space-y-1">
-            {points.map((p, i) => (
-              <li key={i} className="text-xs text-muted/80 leading-relaxed flex gap-2">
-                <span className="text-accent/50 mt-0.5">&#8250;</span>
-                {p}
-              </li>
-            ))}
-          </ul>
-        </div>
+      {points && points.length > 0 && (
+        <ul className="mt-2 space-y-1.5">
+          {points.map((p, i) => (
+            <li key={i} className="text-sm text-muted/80 leading-relaxed flex gap-2">
+              <span className="text-accent/50 mt-0.5">&#8250;</span>
+              {p}
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
@@ -178,7 +163,7 @@ export default function ResumeSection() {
               period={ed.period}
               badge={ed.gpa}
               points={ed.details}
-              defaultOpen
+
             />
           ))}
         </div>
@@ -187,12 +172,12 @@ export default function ResumeSection() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {qualifications.map((q) => (
             <div
-              key={q.name}
+              key={q.name + q.year}
               className="card-hover p-4 rounded-xl bg-surface border border-white/5 text-center"
             >
-              <div className="text-sm font-bold gradient-text mb-1">{q.score}</div>
-              <div className="text-xs font-medium text-foreground">{q.name}</div>
-              <div className="text-[10px] text-muted">{q.year}</div>
+              <div className="text-base font-bold gradient-text mb-1">{q.score}</div>
+              <div className="text-sm font-medium text-foreground">{q.name}</div>
+              <div className="text-xs text-muted">{q.year}</div>
             </div>
           ))}
         </div>

@@ -42,15 +42,19 @@ export default function HamsterWheel() {
         <line x1="28" y1="70" x2="112" y2="70" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
         <line x1="40" y1="40" x2="100" y2="100" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
         <line x1="100" y1="40" x2="40" y2="100" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-        {/* Rungs on wheel surface */}
-        {Array.from({ length: 12 }).map((_, i) => {
-          const angle = (i * 30 * Math.PI) / 180;
-          const x1 = 70 + Math.cos(angle) * 38;
-          const y1 = 70 + Math.sin(angle) * 38;
-          const x2 = 70 + Math.cos(angle) * 42;
-          const y2 = 70 + Math.sin(angle) * 42;
-          return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />;
-        })}
+        {/* Rungs on wheel surface (12 rungs at 30° intervals) */}
+        <line x1="108" y1="70" x2="112" y2="70" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="103" y1="89" x2="106" y2="91" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="89" y1="103" x2="91" y2="106" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="70" y1="108" x2="70" y2="112" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="51" y1="103" x2="49" y2="106" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="37" y1="89" x2="34" y2="91" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="32" y1="70" x2="28" y2="70" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="37" y1="51" x2="34" y2="49" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="51" y1="37" x2="49" y2="34" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="70" y1="32" x2="70" y2="28" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="89" y1="37" x2="91" y2="34" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="103" y1="51" x2="106" y2="49" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
       </g>
       {/* Hub */}
       <circle cx="70" cy="70" r="4" fill="rgba(167,139,250,0.6)" stroke="rgba(167,139,250,0.4)" strokeWidth="1" />
