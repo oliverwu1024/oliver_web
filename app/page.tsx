@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import TimeSeriesBackground from "./components/TimeSeriesBackground";
 import HeroContent from "./components/HeroContent";

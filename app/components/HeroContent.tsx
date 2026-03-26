@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 interface Segment {
   text: string;
@@ -37,17 +37,21 @@ function TypewriterText({
     return () => clearTimeout(id);
   }, [started, count, done, speed, skip]);
 
-  let remaining = count;
-  const rendered = segments.map((seg, i) => {
-    if (remaining <= 0) return null;
-    const chars = Math.min(remaining, seg.text.length);
-    remaining -= chars;
-    return (
-      <span key={i} className={seg.className}>
-        {seg.text.slice(0, chars)}
-      </span>
-    );
-  });
+  const rendered = useMemo(() => {
+    return segments.reduce<{ nodes: React.ReactNode[]; left: number }>(
+      (acc, seg, i) => {
+        if (acc.left <= 0) return acc;
+        const chars = Math.min(acc.left, seg.text.length);
+        acc.nodes.push(
+          <span key={i} className={seg.className}>
+            {seg.text.slice(0, chars)}
+          </span>
+        );
+        return { nodes: acc.nodes, left: acc.left - chars };
+      },
+      { nodes: [], left: count }
+    ).nodes;
+  }, [count, segments]);
 
   return (
     <span className={className}>
@@ -82,8 +86,6 @@ const descSegments: Segment[] = [
   { text: ", I believe great code can push the world forward." },
 ];
 const descSpeed = 12;
-const descChars = descSegments.reduce((s, seg) => s + seg.text.length, 0);
-const descDuration = descChars * descSpeed;
 
 const pillDelay = PLANE_LAND + 200;
 const headingDelay = PLANE_LAND + 400;
