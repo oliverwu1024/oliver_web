@@ -349,6 +349,12 @@ body {
 .scarf-wave-2 { animation: scarf-wave-2 1.5s ease-in-out 0.2s infinite; }
 .prop-spin { animation: prop-spin 0.15s linear infinite; transform-origin: 412px 200px; }
 
+/* Hamster wheel spin */
+@keyframes hamster-wheel-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Cursor blink for typewriter */
 @keyframes cursor-blink {
   0%, 49% { opacity: 1; }

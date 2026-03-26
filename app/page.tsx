@@ -7,6 +7,8 @@ import ContactForm from "./components/ContactForm";
 import Particles from "./components/Particles";
 import SalutingRobot from "./components/SalutingRobot";
 import SkillsTerminal from "./components/SkillsTerminal";
+import ProjectCards from "./components/ProjectCards";
+import HamsterWheel from "./components/HamsterWheel";
 import TuxPenguin from "./components/TuxPenguin";
 
 function PlaneWelcome() {
@@ -224,12 +226,11 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="max-w-6xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">02</span>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-8">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-12 flex items-center gap-4">
             <span className="gradient-text">Projects</span>
+            <HamsterWheel />
           </h2>
-          <p className="text-lg text-muted max-w-2xl leading-relaxed">
-            Coming soon.
-          </p>
+          <ProjectCards />
         </div>
       </section>
 
