@@ -125,7 +125,7 @@ export default function SkillsTerminal() {
         </div>
 
         {/* Terminal body */}
-        <div className="bg-[#0c0c14] p-5 sm:p-6 font-mono text-sm sm:text-base leading-relaxed">
+        <div className="bg-[#0c0c14] p-4 sm:p-6 font-mono text-xs sm:text-sm lg:text-base leading-relaxed">
           {/* Command */}
           <div className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
             <span className="text-green-400">$</span>{" "}
@@ -136,7 +136,7 @@ export default function SkillsTerminal() {
 
           {/* Grid of trees */}
           <div
-            className={`grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 xl:gap-10 transition-opacity duration-700 delay-300 ${
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8 xl:gap-10 transition-opacity duration-700 delay-300 ${
               visible ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -169,15 +169,17 @@ export default function SkillsTerminal() {
                         {item.name}
                       </button>
 
-                      {/* Floating popup */}
+                      {/* Floating popup — below on mobile, above on larger */}
                       {isActive && activeDesc && (
                         <div
                           data-skill-popup
-                          className="absolute z-50 left-0 bottom-full mb-2 w-64 p-3 rounded-lg bg-surface-2 border border-accent/30 shadow-xl shadow-accent/10 text-xs text-muted leading-relaxed animate-fade-in"
+                          className="absolute z-50 left-0 top-full mt-2 sm:top-auto sm:bottom-full sm:mt-0 sm:mb-2 w-56 sm:w-64 p-3 rounded-lg bg-surface-2 border border-accent/30 shadow-xl shadow-accent/10 text-xs text-muted leading-relaxed animate-fade-in"
                         >
                           <div className="text-accent font-medium mb-1">{item.name}</div>
                           <div>{activeDesc}</div>
-                          <div className="absolute left-4 -bottom-1.5 w-3 h-3 bg-surface-2 border-r border-b border-accent/30 rotate-45" />
+                          {/* Arrow — points up on mobile, down on desktop */}
+                          <div className="hidden sm:block absolute left-4 -bottom-1.5 w-3 h-3 bg-surface-2 border-r border-b border-accent/30 rotate-45" />
+                          <div className="sm:hidden absolute left-4 -top-1.5 w-3 h-3 bg-surface-2 border-l border-t border-accent/30 rotate-45" />
                         </div>
                       )}
                     </div>
