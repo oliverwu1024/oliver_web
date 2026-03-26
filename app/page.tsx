@@ -6,6 +6,8 @@ import NavList from "./components/NavList";
 import ContactForm from "./components/ContactForm";
 import Particles from "./components/Particles";
 import SalutingRobot from "./components/SalutingRobot";
+import SkillsTerminal from "./components/SkillsTerminal";
+import TuxPenguin from "./components/TuxPenguin";
 
 function PlaneWelcome() {
   return (
@@ -235,14 +237,13 @@ export default function Home() {
       <section id="skills" className="relative min-h-screen flex items-center px-6 bg-surface section-particles">
         <Particles />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
-        <div className="max-w-6xl mx-auto w-full py-24">
+        <div className="max-w-7xl mx-auto w-full py-24">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">03</span>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-8">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-12 flex items-center gap-4">
             <span className="gradient-text">Skills</span>
+            <TuxPenguin />
           </h2>
-          <p className="text-lg text-muted max-w-2xl leading-relaxed">
-            Coming soon.
-          </p>
+          <SkillsTerminal />
         </div>
       </section>
 
