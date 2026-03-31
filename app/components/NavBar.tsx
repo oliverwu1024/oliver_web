@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const sections = [
   { href: "#about", label: "About" },
@@ -34,7 +35,7 @@ export default function NavBar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-white/5"
+          ? "bg-background/80 backdrop-blur-xl border-b border-foreground/5"
           : "bg-transparent"
       }`}
     >
@@ -90,6 +91,7 @@ export default function NavBar() {
           >
             LinkedIn
           </a>
+          <ThemeToggle />
         </div>
       </div>
 
@@ -99,7 +101,7 @@ export default function NavBar() {
           menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 pb-4 bg-background/90 backdrop-blur-xl border-b border-white/5">
+        <div className="max-w-6xl mx-auto px-6 pb-4 bg-background/90 backdrop-blur-xl border-b border-foreground/5">
           <div className="flex flex-col gap-1">
             {sections.map((s, i) => (
               <a

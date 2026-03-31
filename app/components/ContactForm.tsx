@@ -63,7 +63,7 @@ export default function ContactForm() {
           name="name"
           required
           placeholder="Enter your name"
-          className="w-full px-4 py-3 rounded-xl bg-background border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors"
         />
       </div>
       <div>
@@ -74,7 +74,7 @@ export default function ContactForm() {
           name="email"
           required
           placeholder="example@email.com"
-          className="w-full px-4 py-3 rounded-xl bg-background border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors"
         />
       </div>
       <div>
@@ -85,7 +85,7 @@ export default function ContactForm() {
           required
           rows={5}
           placeholder="Write your message..."
-          className="w-full px-4 py-3 rounded-xl bg-background border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/25 transition-colors resize-none"
         />
       </div>
       <button

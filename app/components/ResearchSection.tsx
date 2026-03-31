@@ -35,7 +35,7 @@ export default function ResearchSection() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="card-hover group relative p-8 rounded-2xl bg-surface border border-white/5 overflow-hidden"
+              className="card-hover group relative p-8 rounded-2xl bg-surface border border-foreground/5 overflow-hidden"
             >
               {/* Gradient accent line */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
@@ -62,7 +62,7 @@ export default function ResearchSection() {
                 {project.techs.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs px-2.5 py-1 rounded-lg bg-surface-2 text-muted border border-white/5"
+                    className="text-xs px-2.5 py-1 rounded-lg bg-surface-2 text-muted border border-foreground/5"
                   >
                     {tech}
                   </span>

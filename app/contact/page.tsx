@@ -68,7 +68,7 @@ export default function ContactPage() {
               href={link.href}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="card-hover group p-6 rounded-2xl bg-surface border border-white/5 text-center block"
+              className="card-hover group p-6 rounded-2xl bg-surface border border-foreground/5 text-center block"
             >
               <div className="text-accent mb-4 flex justify-center group-hover:scale-110 transition-transform">
                 {link.icon}

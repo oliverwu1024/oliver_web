@@ -116,7 +116,7 @@ function TimelineEntry({
   points?: string[];
 }) {
   return (
-    <div className="relative pl-8 pb-8 border-l border-white/10 last:pb-0">
+    <div className="relative pl-8 pb-8 border-l border-foreground/10 last:pb-0">
       <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-surface-2 border-2 border-accent/60 -translate-x-[7px]" />
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
         <span className="text-base font-semibold text-foreground">
@@ -173,7 +173,7 @@ export default function ResumeSection() {
           {qualifications.map((q) => (
             <div
               key={q.name + q.year}
-              className="card-hover p-4 rounded-xl bg-surface border border-white/5 text-center"
+              className="card-hover p-4 rounded-xl bg-surface border border-foreground/5 text-center"
             >
               <div className="text-base font-bold gradient-text mb-1">{q.score}</div>
               <div className="text-sm font-medium text-foreground">{q.name}</div>

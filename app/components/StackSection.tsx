@@ -52,7 +52,7 @@ export default function StackSection() {
                 {group.items.map((item) => (
                   <div
                     key={item.name}
-                    className="card-hover group p-5 rounded-2xl bg-surface border border-white/5"
+                    className="card-hover group p-5 rounded-2xl bg-surface border border-foreground/5"
                   >
                     <div className="text-2xl mb-3">{item.icon}</div>
                     <div className="font-medium text-foreground mb-1 group-hover:text-accent transition-colors">

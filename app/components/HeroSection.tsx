@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center px-6">
       <div className="max-w-4xl mx-auto text-center">
         {/* Status badge */}
-        <div className="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-white/5 mb-8">
+        <div className="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-foreground/5 mb-8">
           <span className="w-2 h-2 rounded-full bg-green-500 status-dot" />
           <span className="text-sm text-muted">Available for collaboration</span>
         </div>
@@ -33,7 +33,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#stack"
-            className="px-6 py-3 rounded-xl border border-white/10 text-sm font-medium text-muted hover:text-foreground hover:border-white/20 transition-all"
+            className="px-6 py-3 rounded-xl border border-foreground/10 text-sm font-medium text-muted hover:text-foreground hover:border-foreground/20 transition-all"
           >
             Tech Stack
           </a>
@@ -41,7 +41,7 @@ export default function HeroSection() {
 
         {/* Scroll indicator */}
         <div className="animate-fade-in animation-delay-800 absolute bottom-12 left-1/2 -translate-x-1/2">
-          <div className="w-5 h-8 rounded-full border-2 border-white/20 flex items-start justify-center p-1">
+          <div className="w-5 h-8 rounded-full border-2 border-foreground/20 flex items-start justify-center p-1">
             <div className="w-1 h-2 rounded-full bg-white/40 animate-bounce" />
           </div>
         </div>

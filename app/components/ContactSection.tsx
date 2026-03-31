@@ -27,7 +27,7 @@ export default function ContactSection() {
             href="https://github.com/oliverwu1024"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3.5 rounded-xl border border-white/10 text-sm font-medium text-muted hover:text-foreground hover:border-white/20 transition-all"
+            className="px-8 py-3.5 rounded-xl border border-foreground/10 text-sm font-medium text-muted hover:text-foreground hover:border-foreground/20 transition-all"
           >
             GitHub
           </a>

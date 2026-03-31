@@ -36,7 +36,7 @@ export default function AboutSection() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="card-hover p-6 rounded-2xl bg-surface border border-white/5"
+                className="card-hover p-6 rounded-2xl bg-surface border border-foreground/5"
               >
                 <div className="text-2xl font-bold gradient-text mb-1">
                   {stat.number}

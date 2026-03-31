@@ -102,7 +102,7 @@ export default function HeroContent() {
     <div className="text-left max-w-2xl">
       {/* Status pill */}
       <div
-        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-white/5 mb-8 transition-opacity duration-500 ${
+        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-foreground/5 mb-8 transition-opacity duration-500 ${
           showPill ? "opacity-100" : "opacity-0"
         }`}
       >

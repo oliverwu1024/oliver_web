@@ -1,9 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTheme } from "./ThemeProvider";
 
 export default function TimeSeriesBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
+  const themeRef = useRef(theme);
+  themeRef.current = theme;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -27,7 +31,6 @@ export default function TimeSeriesBackground() {
     resize();
     window.addEventListener("resize", resize);
 
-    // Generate a time series value using layered sine waves + noise
     const generateY = (x: number, t: number, seed: number) => {
       const h = window.innerHeight;
       const base = h * 0.5;
@@ -36,7 +39,6 @@ export default function TimeSeriesBackground() {
         Math.sin((x + t) * 0.007 + seed * 2) * h * 0.05 +
         Math.sin((x + t) * 0.015 + seed * 0.5) * h * 0.03 +
         Math.sin((x + t) * 0.04 + seed * 3) * h * 0.015 +
-        // Sharp spikes — occasional jumps like real time series
         Math.sin((x + t) * 0.002 + seed * 1.7) *
           Math.sin((x + t) * 0.023 + seed) *
           h *
@@ -44,22 +46,30 @@ export default function TimeSeriesBackground() {
       return base + v;
     };
 
-    const lines = [
-      { seed: 0, speed: 0.8, color: "99, 102, 241", opacity: 0.15, width: 1.5 }, // accent indigo
-      { seed: 5, speed: 0.5, color: "139, 92, 246", opacity: 0.1, width: 1 },    // accent-2 purple
-      { seed: 12, speed: 1.1, color: "167, 139, 250", opacity: 0.07, width: 0.8 }, // lighter purple
+    const darkLines = [
+      { seed: 0, speed: 0.8, color: "99, 102, 241", opacity: 0.15, width: 1.5 },
+      { seed: 5, speed: 0.5, color: "139, 92, 246", opacity: 0.1, width: 1 },
+      { seed: 12, speed: 1.1, color: "167, 139, 250", opacity: 0.07, width: 0.8 },
+    ];
+
+    const lightLines = [
+      { seed: 0, speed: 0.8, color: "37, 99, 235", opacity: 0.2, width: 1.5 },
+      { seed: 5, speed: 0.5, color: "59, 130, 246", opacity: 0.15, width: 1 },
+      { seed: 12, speed: 1.1, color: "96, 165, 250", opacity: 0.1, width: 0.8 },
     ];
 
     const draw = () => {
       const w = window.innerWidth;
       const h = window.innerHeight;
+      const isDark = themeRef.current === "dark";
+      const lines = isDark ? darkLines : lightLines;
+      const gridColor = isDark ? "rgba(99, 102, 241, 0.03)" : "rgba(37, 99, 235, 0.05)";
 
       ctx.clearRect(0, 0, w, h);
 
       for (const line of lines) {
         const t = time * line.speed;
 
-        // Draw the line
         ctx.beginPath();
         ctx.strokeStyle = `rgba(${line.color}, ${line.opacity})`;
         ctx.lineWidth = line.width;
@@ -69,23 +79,16 @@ export default function TimeSeriesBackground() {
         const step = 3;
         for (let x = 0; x <= w; x += step) {
           const y = generateY(x, t, line.seed);
-          if (x === 0) {
-            ctx.moveTo(x, y);
-          } else {
-            ctx.lineTo(x, y);
-          }
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
         }
         ctx.stroke();
 
-        // Draw a faint glow fill below the line
         ctx.beginPath();
         for (let x = 0; x <= w; x += step) {
           const y = generateY(x, t, line.seed);
-          if (x === 0) {
-            ctx.moveTo(x, y);
-          } else {
-            ctx.lineTo(x, y);
-          }
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
         }
         ctx.lineTo(w, h);
         ctx.lineTo(0, h);
@@ -98,8 +101,7 @@ export default function TimeSeriesBackground() {
         ctx.fill();
       }
 
-      // Draw faint grid lines like a chart
-      ctx.strokeStyle = "rgba(99, 102, 241, 0.03)";
+      ctx.strokeStyle = gridColor;
       ctx.lineWidth = 0.5;
       const gridSpacingY = h / 8;
       for (let y = gridSpacingY; y < h; y += gridSpacingY) {

@@ -47,7 +47,7 @@ export default function BlogPage() {
           {posts.map((post) => (
             <article
               key={post.title}
-              className="card-hover group p-8 rounded-2xl bg-surface border border-white/5 relative overflow-hidden"
+              className="card-hover group p-8 rounded-2xl bg-surface border border-foreground/5 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
 

@@ -194,7 +194,7 @@ export default function ProjectCards() {
         return (
           <div
             key={project.title}
-            className="card-hover group relative rounded-2xl bg-surface border border-white/5 overflow-hidden"
+            className="card-hover group relative rounded-2xl bg-surface border border-foreground/5 overflow-hidden"
           >
             {/* Top gradient accent */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
@@ -240,7 +240,7 @@ export default function ProjectCards() {
                 className="overflow-hidden transition-all duration-500 ease-in-out"
                 style={{ maxHeight: isOpen ? "200px" : "0px", opacity: isOpen ? 1 : 0 }}
               >
-                <p className="text-sm text-muted/80 leading-relaxed mb-4 border-t border-white/5 pt-4">
+                <p className="text-sm text-muted/80 leading-relaxed mb-4 border-t border-foreground/5 pt-4">
                   {project.details}
                 </p>
               </div>
@@ -251,7 +251,7 @@ export default function ProjectCards() {
                   {project.techs.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs px-2.5 py-1 rounded-lg bg-surface-2 text-muted border border-white/5"
+                      className="text-xs px-2.5 py-1 rounded-lg bg-surface-2 text-muted border border-foreground/5"
                     >
                       {tech}
                     </span>
