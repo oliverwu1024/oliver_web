@@ -1,3 +1,12 @@
+import { redirect } from "next/navigation";
+
+// Blog page hidden until content is ready – redirects to home
+export default function BlogPage() {
+  redirect("/");
+}
+
+/* Original blog page – uncomment when ready
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,7 +30,6 @@ export default function BlogPage() {
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <div className="max-w-3xl mb-16">
           <span className="text-sm font-mono text-accent tracking-wider uppercase mb-4 block">
             Blog
@@ -35,7 +43,6 @@ export default function BlogPage() {
           </p>
         </div>
 
-        {/* Posts */}
         <div className="space-y-6">
           {posts.map((post) => (
             <article
@@ -70,3 +77,4 @@ export default function BlogPage() {
     </div>
   );
 }
+*/

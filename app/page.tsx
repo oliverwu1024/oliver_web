@@ -316,7 +316,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Blog */}
+      {/* 6. Blog – hidden until content is ready
       <section id="blog" className="relative min-h-screen flex items-center px-6 bg-background section-particles">
         <Particles />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
@@ -330,6 +330,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      */}
     </>
   );
 }

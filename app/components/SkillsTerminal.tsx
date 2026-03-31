@@ -125,7 +125,7 @@ export default function SkillsTerminal() {
         </div>
 
         {/* Terminal body */}
-        <div className="bg-[#0c0c14] p-4 sm:p-6 font-mono text-xs sm:text-sm lg:text-base leading-relaxed">
+        <div className="bg-surface p-4 sm:p-6 font-mono text-xs sm:text-sm lg:text-base leading-relaxed">
           {/* Command */}
           <div className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
             <span className="text-green-400">$</span>{" "}
