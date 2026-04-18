@@ -24,7 +24,7 @@ const projects: Project[] = [
     details:
       "Building a modern online storefront from scratch — featuring product catalog with search and filtering, user accounts with order history, a real-time shopping cart, Stripe checkout integration, and an admin dashboard for inventory management. Designed for scalability with a RESTful API backend.",
     techs: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-    status: "Planned",
+    status: "In Progress",
     gradient: "from-amber-500/20 via-yellow-500/20 to-orange-500/20",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" className="w-full h-full">
@@ -45,6 +45,43 @@ const projects: Project[] = [
     ),
   },
   {
+    tag: "Mobile",
+    title: "Ultimate Productivity App",
+    description:
+      "Offline-first Android productivity app with sleep tracking, pomodoro sessions, and calendar — backed by a Rust API.",
+    details:
+      "A Kotlin + Jetpack Compose Android client paired with a Rust/Axum backend and PostgreSQL. Tracks sleep with phone-pickup detection during the night, runs pomodoro focus sessions with UsageStatsManager-based distraction monitoring, and manages recurring calendar events. Offline-first with Room for local caching, JWT auth, and WorkManager-driven background sync.",
+    techs: ["Kotlin", "Rust", "Jetpack Compose", "PostgreSQL"],
+    status: "In Progress",
+    gradient: "from-sky-500/20 via-blue-500/20 to-indigo-500/20",
+    icon: (
+      <svg viewBox="0 0 80 80" fill="none" className="w-full h-full">
+        {/* Phone body */}
+        <rect x="22" y="8" width="36" height="64" rx="6" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.5)" strokeWidth="1.5" />
+        {/* Notch */}
+        <rect x="36" y="10" width="8" height="2" rx="1" fill="rgba(56,189,248,0.4)" />
+        {/* Timer ring background */}
+        <circle cx="40" cy="28" r="9" stroke="rgba(56,189,248,0.2)" strokeWidth="2" fill="none" />
+        {/* Timer progress arc */}
+        <path d="M 40 19 A 9 9 0 1 1 31 28" stroke="rgba(129,140,248,0.85)" strokeWidth="2" fill="none" strokeLinecap="round" />
+        {/* Center dot */}
+        <circle cx="40" cy="28" r="2.5" fill="rgba(129,140,248,0.7)" />
+        {/* Stat bars */}
+        <rect x="28" y="44" width="24" height="2" rx="1" fill="rgba(56,189,248,0.45)" />
+        <rect x="28" y="48" width="16" height="2" rx="1" fill="rgba(56,189,248,0.3)" />
+        {/* Checked todo item */}
+        <circle cx="30" cy="57" r="2" fill="rgba(129,140,248,0.6)" />
+        <path d="M 28.8 57 L 29.7 57.9 L 31.2 56.3" stroke="rgba(255,255,255,0.95)" strokeWidth="0.9" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="34" y="56" width="18" height="1.8" rx="0.5" fill="rgba(56,189,248,0.4)" />
+        {/* Unchecked todo item */}
+        <circle cx="30" cy="63" r="2" stroke="rgba(129,140,248,0.5)" strokeWidth="0.9" fill="none" />
+        <rect x="34" y="62" width="14" height="1.8" rx="0.5" fill="rgba(56,189,248,0.3)" />
+        {/* Home indicator */}
+        <rect x="35" y="68" width="10" height="1.5" rx="0.75" fill="rgba(56,189,248,0.4)" />
+      </svg>
+    ),
+  },
+  {
     tag: "Web Dev",
     title: "Personal Website (v2)",
     description:
@@ -52,7 +89,7 @@ const projects: Project[] = [
     details:
       "Features a custom SVG plane landing animation, particle backgrounds, terminal-style skills section, interactive project cards, and a contact form. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4. Deployed on Vercel.",
     techs: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    status: "In Progress",
+    status: "Done / Updating",
     link: "https://oliverweb-delta.vercel.app/",
     github: "https://github.com/oliverwu1024/oliver_web",
     gradient: "from-violet-500/20 via-fuchsia-500/20 to-purple-500/20",
@@ -216,11 +253,13 @@ export default function ProjectCards() {
                 <span className={`flex items-center gap-1.5 text-xs ${
                   project.status === "Completed" ? "text-green-400" :
                   project.status === "In Progress" ? "text-yellow-400" :
+                  project.status === "Done / Updating" ? "text-emerald-400" :
                   "text-blue-400"
                 }`}>
                   <span className={`w-1.5 h-1.5 rounded-full ${
                     project.status === "Completed" ? "bg-green-400" :
                     project.status === "In Progress" ? "bg-yellow-400 status-dot" :
+                    project.status === "Done / Updating" ? "bg-emerald-400 status-dot" :
                     "bg-blue-400"
                   }`} />
                   {project.status}
