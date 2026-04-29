@@ -109,7 +109,7 @@ export default function OgImage() {
             fontFamily: "monospace",
           }}
         >
-          oliverweb-delta.vercel.app
+          oliverwu1024.dev
         </div>
       </div>
     ),

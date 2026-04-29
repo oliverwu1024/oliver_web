@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://oliverweb-delta.vercel.app";
+  const base = "https://oliverwu1024.dev";
 
   return [
     { url: base, lastModified: new Date(), priority: 1.0 },

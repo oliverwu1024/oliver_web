@@ -90,7 +90,7 @@ const projects: Project[] = [
       "Features a custom SVG plane landing animation, particle backgrounds, terminal-style skills section, interactive project cards, and a contact form. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4. Deployed on Vercel.",
     techs: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     status: "Done / Updating",
-    link: "https://oliverweb-delta.vercel.app/",
+    link: "https://oliverwu1024.dev/",
     github: "https://github.com/oliverwu1024/oliver_web",
     gradient: "from-violet-500/20 via-fuchsia-500/20 to-purple-500/20",
     icon: (

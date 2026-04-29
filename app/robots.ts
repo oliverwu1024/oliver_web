@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://oliverweb-delta.vercel.app/sitemap.xml",
+    sitemap: "https://oliverwu1024.dev/sitemap.xml",
   };
 }

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://oliverweb-delta.vercel.app";
+const siteUrl = "https://oliverwu1024.dev";
 
 export const metadata: Metadata = {
   title: {
