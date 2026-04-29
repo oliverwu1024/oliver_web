@@ -222,12 +222,22 @@ const projects: Project[] = [
   },
 ];
 
+const STATUS_ORDER: Record<string, number> = {
+  "In Progress": 0,
+  "Done / Updating": 1,
+  "Completed": 2,
+};
+
+const sortedProjects = [...projects].sort(
+  (a, b) => (STATUS_ORDER[a.status] ?? 99) - (STATUS_ORDER[b.status] ?? 99)
+);
+
 export default function ProjectCards() {
   const [expanded, setExpanded] = useState<string | null>(null);
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projects.map((project) => {
+      {sortedProjects.map((project) => {
         const isOpen = expanded === project.title;
         return (
           <div
