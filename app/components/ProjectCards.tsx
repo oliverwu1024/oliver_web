@@ -24,7 +24,8 @@ const projects: Project[] = [
     details:
       "Building a modern online storefront from scratch — featuring product catalog with search and filtering, user accounts with order history, a real-time shopping cart, Stripe checkout integration, and an admin dashboard for inventory management. Designed for scalability with a RESTful API backend.",
     techs: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-    status: "In Progress",
+    status: "Done / Updating",
+    link: "https://electromarket-app.com/",
     gradient: "from-amber-500/20 via-yellow-500/20 to-orange-500/20",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" className="w-full h-full">
