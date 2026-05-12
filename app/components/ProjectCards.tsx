@@ -18,14 +18,15 @@ interface Project {
 const projects: Project[] = [
   {
     tag: "E-Commerce",
-    title: "E-Commerce Platform",
+    title: "ElectroMarket",
     description:
-      "Full-stack e-commerce platform with product management, user authentication, shopping cart, and payment integration.",
+      "Peer-to-peer marketplace for buying and selling second-hand electronics across Australia — funds settle directly to each seller's own payment account.",
     details:
-      "Building a modern online storefront from scratch — featuring product catalog with search and filtering, user accounts with order history, a real-time shopping cart, Stripe checkout integration, and an admin dashboard for inventory management. Designed for scalability with a RESTful API backend.",
-    techs: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
+      "A full-stack marketplace where individuals and small businesses list used electronics — phones, laptops, consoles, cameras, audio. Buyers browse with full-text search and rich filters; sellers connect Stripe, Square, or PayPal so money flows direct (the platform never custodies funds). Built on Next.js 16 + Express 5 + Prisma + PostgreSQL, with a BullMQ worker draining a transactional outbox to keep Square Catalog in sync, AES-256-GCM encryption for OAuth tokens at rest, Redis-backed rate limiting, and tsvector full-text search.",
+    techs: ["Next.js", "Express", "PostgreSQL", "Stripe / Square / PayPal"],
     status: "Done / Updating",
     link: "https://electromarket-app.com/",
+    github: "https://github.com/oliverwu1024/e-commerce_app",
     gradient: "from-amber-500/20 via-yellow-500/20 to-orange-500/20",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" className="w-full h-full">
@@ -47,13 +48,15 @@ const projects: Project[] = [
   },
   {
     tag: "Mobile",
-    title: "Ultimate Productivity App",
+    title: "Ultiq — Your Ultimate Productivity Companion",
     description:
-      "Offline-first Android productivity app with sleep tracking, pomodoro sessions, and calendar — backed by a Rust API.",
+      "Full-stack productivity tracker — Android app, Rust API, and WebAssembly analytics dashboard, fully deployed on AWS.",
     details:
-      "A Kotlin + Jetpack Compose Android client paired with a Rust/Axum backend and PostgreSQL. Tracks sleep with phone-pickup detection during the night, runs pomodoro focus sessions with UsageStatsManager-based distraction monitoring, and manages recurring calendar events. Offline-first with Room for local caching, JWT auth, and WorkManager-driven background sync.",
-    techs: ["Kotlin", "Rust", "Jetpack Compose", "PostgreSQL"],
-    status: "In Progress",
+      "A Kotlin + Jetpack Compose Android client paired with an Axum/Rust backend, PostgreSQL on RDS, and a Leptos/WASM analytics dashboard. Tracks sleep with phone-pickup detection, runs pomodoro focus sessions, manages calendar events and daily checklists, and surfaces weekly reflections. Security-hardened with SQLCipher-encrypted Room storage, Argon2id passwords, JWT revocation via token_version, and SSE for realtime cross-device sync. Deployed via GitHub Actions OIDC to ECS Fargate, S3 + CloudFront, and ECR.",
+    techs: ["Kotlin", "Rust", "Leptos / WASM", "AWS"],
+    status: "Done / Updating",
+    link: "https://ultiqapp.com/",
+    github: "https://github.com/oliverwu1024/ultimate-productivity-app",
     gradient: "from-sky-500/20 via-blue-500/20 to-indigo-500/20",
     icon: (
       <svg viewBox="0 0 80 80" fill="none" className="w-full h-full">
