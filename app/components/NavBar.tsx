@@ -10,7 +10,7 @@ const sections = [
   { href: "#skills", label: "Skills" },
   { href: "#resume", label: "Resume" },
   { href: "#contact", label: "Contact" },
-  // { href: "#blog", label: "Blog" },
+  { href: "#blog", label: "Blog" },
 ];
 
 export default function NavBar() {

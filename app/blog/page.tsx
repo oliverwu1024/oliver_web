@@ -1,12 +1,3 @@
-import { redirect } from "next/navigation";
-
-// Blog page hidden until content is ready – redirects to home
-export default function BlogPage() {
-  redirect("/");
-}
-
-/* Original blog page – uncomment when ready
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -77,4 +68,3 @@ export default function BlogPage() {
     </div>
   );
 }
-*/
