@@ -6,6 +6,7 @@ const tools = [
       { name: "R", icon: "📊", desc: "Statistical computing & viz" },
       { name: "SQL", icon: "🗄️", desc: "Data querying & management" },
       { name: "Rust", icon: "⚙️", desc: "Systems & performance-critical code" },
+      { name: "C# / .NET", icon: "💜", desc: "Backend services & APIs with ASP.NET Core" },
     ],
   },
   {

@@ -23,6 +23,7 @@ const categories: Category[] = [
       { name: "SQL", desc: "Standard language for querying, manipulating, and managing relational databases." },
       { name: "R", desc: "Statistical computing language built for data analysis, visualization, and reproducible research." },
       { name: "Rust (learning)", desc: "Systems language focused on memory safety and performance without a garbage collector." },
+      { name: "C#", desc: "Modern, statically typed language from Microsoft used for backend services, desktop apps, and game development." },
     ],
   },
   {
@@ -32,6 +33,8 @@ const categories: Category[] = [
       { name: "HTML / CSS", desc: "Hypertext Markup Language and Cascading Style Sheets, used for structuring and presenting content on the web." },
       { name: "React", desc: "Component-based JavaScript library for building dynamic, declarative user interfaces." },
       { name: "Next.js", desc: "React framework with server-side rendering, routing, and full-stack capabilities out of the box." },
+      { name: "Angular", desc: "TypeScript-based framework from Google for building structured, large-scale single-page applications." },
+      { name: "Vue", desc: "Progressive JavaScript framework for building user interfaces with an approachable, component-based model." },
     ],
   },
   {
@@ -41,6 +44,7 @@ const categories: Category[] = [
       { name: "FastAPI", desc: "Modern Python web framework for building high-performance APIs with automatic OpenAPI docs." },
       { name: "REST APIs", desc: "Architectural style for designing networked applications using stateless HTTP requests." },
       { name: "PostgreSQL", desc: "Powerful open-source relational database known for reliability, extensibility, and SQL compliance." },
+      { name: ".NET / ASP.NET Core", desc: "Cross-platform framework for building high-performance web APIs and services in C#." },
     ],
   },
   {
